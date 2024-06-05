@@ -1,0 +1,25 @@
+{
+  "propel": {
+    "database": {
+      "connections": {
+        "default": {
+          "adapter": "sqlsrv",
+          "dsn": "sqlsrv:server=216.158.227.194;database=toDoAppDB",
+          "user": "a3emond",
+          "password": "Baddemon665!",
+          "settings": {
+            "charset": "utf8"
+          }
+        }
+      }
+    },
+    "runtime": {
+      "defaultConnection": "default",
+      "connections": ["default"]
+    },
+    "generator": {
+      "defaultConnection": "default",
+      "connections": ["default"]
+    }
+  }
+}

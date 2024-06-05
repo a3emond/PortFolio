@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="a3emond" defaultIdMethod="native">
+    <table name="Users" phpName="User">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="UserName" type="varchar" size="255" required="true"/>
+        <column name="emailAdress" type="varchar" size="255" required="true"/>
+        <column name="password" type="varchar" size="255" required="true"/>
+        <column name="created_at" type="timestamp" required="true"/>
+        <column name="updated_at" type="timestamp" required="true"/>
+    </table>
+    <table name="Tasks" phpName="Task">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="title" type="varchar" size="100" required="true"/>
+        <column name="description" type="varchar" size="1064"/>
+        <column name="status" type="varchar" size="8" required="true"/>
+        <column name="created_at" type="timestamp" required="true"/>
+        <column name="updated_at" type="timestamp" required="true"/>
+        <column name="user_id" type="integer" required="true"/>
+        <foreign-key foreignTable="Users">
+            <reference local="user_id" foreign="id"/>
+        </foreign-key>
+    </table>
+</database>

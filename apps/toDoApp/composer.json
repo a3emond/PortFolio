@@ -1,0 +1,19 @@
+{
+  "name": "a3emo/to-do-app",
+  "type": "project",
+  "authors": [
+    {
+      "name": "emond alexandre",
+      "email": "a3emond@gmail.com"
+    }
+  ],
+  "minimum-stability": "beta",
+  "require": {
+    "propel/propel": "^2.0@beta"
+  },
+  "autoload": {
+    "psr-4": {
+      "a3emond\\": "generated-classes/a3emond/"
+    }
+  }
+}

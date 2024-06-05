@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/buttons.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="Assets/AeDevIcon-black.ico" type="image/x-icon" />
+    <title>AE-Dev</title>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="Assets/logo-part1.png"
+        alt="logo"
+        class="logo bumpLeft"
+        width="80px"
+      />
+      <h1 class="move" style="color: white; margin: 20px;">
+        <i class="fa-solid fa-circle-right"></i>
+      </h1>
+      <img
+        src="Assets/logo-part2.png"
+        alt="logo"
+        class="logo bumpRight"
+        width="130px"
+      />
+    </div>
+    <div class="mainContainer">
+      <button class="menuBtn">
+        <i class="fa-solid fa-caret-right"></i>
+      </button>
+      <div class="sidebar">
+        <p style="color: white;" id="buttonTitle"></p>
+        <button id="homeBtn" class="button">
+          <i class="fa-solid fa-house-chimney"></i>
+        </button>
+        <button id="toolsBtn" class="button">
+          <i class="fa-solid fa-toolbox"></i>
+        </button>
+        <button id="gitHubBtn" class="button">
+          <i class="fa-brands fa-github"></i>
+        </button>
+        <button id="linkedInBtn" class="button">
+          <i class="fa-brands fa-linkedin"></i>
+        </button>
+        <button id="noteTakingAppBtn" class="button">
+          <i class="fa-solid fa-pencil"></i>
+        </button>
+        <button id="mailBtn" class="button">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </div>
+
+      <div class="content"></div>
+    </div>
+    <div class="footer"></div>
+    <script src="scripts/layout.js"></script>
+    <script src="scripts/routing.js"></script>
+  </body>
+</html>
