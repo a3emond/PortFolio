@@ -28,7 +28,8 @@
 }
 #buttonTitle {
   position: absolute;
-  top: 5px;
+  top: 10px;
   text-align: center;
   overflow-wrap: normal;
+  margin-bottom: 20px;
 }

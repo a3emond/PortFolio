@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<div class="formContainer">
+<div class="formContainer" ">
 <form action="createTask.php" method="post">
     <label>Titre :</label>
     <input id="title" name="title" placeholder="title" type="text" required>
