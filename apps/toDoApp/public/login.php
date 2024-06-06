@@ -34,17 +34,19 @@
         exit; // Stop the script after sending the JSON response
     }
 ?>
-<link rel="stylesheet" type="text/css" href="apps/toDoApp/public/css/styles.css"> 
 <div class="formContainer">
-    <h2>Login</h2>
+    <h2>Connexion</h2>
+    <br />
     <form action="login.php" method="post">
-        <label>Username :</label>
+        <label>Nom d'utilisateur :</label>
         <input id="name" name="username" placeholder="username" type="text" required>
-        <label>Password :</label>
+        <label>Mot de passe :</label>
         <input id="password" name="password" placeholder="**********" type="password" required><br />
-        <button type="submit" id="loginBtn">Login</button>
-        <span><?php echo $error; ?></span>
+        <button class="formBtn" type="submit" id="loginBtn">Se Connecter</button>
+        <br />
+        <p><i>Pas encore inscrit? Creez un compte!</i></p> 
+        <br />
+        <button class="formBtn" id="registerBtn">Nouveau compte</button>
     </form>
-    <p><i>Pas encore inscrit? Creez un compte!</i></p> 
-    <button id="registerBtn">Nouveau compte</button>
+    
 </div>        

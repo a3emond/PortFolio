@@ -53,28 +53,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<link rel="stylesheet" type="text/css" href="apps/toDoApp/public/css/styles.css"> 
 
     <div class="formContainer">
-        <h2>Registration Form</h2>
+        <h2>Nouvel Utilisateur</h2>
         <br />
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
-            <label for="email">Email Address:</label><br>
+            <label for="email">Email:</label>
             <input type="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : ''; ?>" required><br>
 
-            <label for="username">Username:</label><br>
+            <label for="username">Nom d'utilisateur:</label>
             <input type="text" name="username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username'], ENT_QUOTES) : ''; ?>" required><br>
 
-            <label for="password">Password:</label><br>
+            <label for="password">Mot de passe:</label>
             <input type="password" id="password" name="password" required ><br>
 
-            <label for="confirmPassword">Confirm Password:</label><br>
+            <label for="confirmPassword">Confirmez le mot de passe:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required ><br>
-            <button id="registerBtn" type="submit">Register</button>
-            <?php 
-                if ($error) {
-                    echo "<p style='color:red;'>$error</p>";
-                }
-            ?>
+            <button class="formBtn" id="registerBtn" type="submit">Register</button>
+            <br />
+            <button id="backBtn" class="formBtn">Retour</button>
         </form>
     </div>

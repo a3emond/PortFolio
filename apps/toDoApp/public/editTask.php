@@ -55,11 +55,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET'){
 }
 ?>
 
+
+<div class="formContainer">
 <form action="editTask.php" method="post">
-    <label for="title">Title</label>
+    <label for="title">Titre:</label>
     <input type="text" id="title" name="title" value="<?php echo $task -> getTitle()?>">
-    <label for="description">Description</label>
-    <input type="text" id="description" name="description" value="<?php echo $task -> getDescription()?>">
-    <button type="submit">Sauvegarder</button>
-    <button id="cancelBtn" type="button">Annuler</button>
+    <br />
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder="description" type="text" ><?php echo $task -> getDescription()?></textarea>
+    <br />
+    <button class="formBtn" type="submit">Sauvegarder</button>
+    <br />
+    <button class="formBtn" type="button" id="cancelBtn">Annuler</button>
 </form>
+</div>

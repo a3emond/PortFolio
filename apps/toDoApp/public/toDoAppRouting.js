@@ -64,6 +64,7 @@ fetchRegister = () => {
     .then((data) => {
       container.innerHTML = data;
       //event listener for the register form
+      document.querySelector("#backBtn").addEventListener("click", fetchLogin);
       container.addEventListener("submit", (event) => {
         event.preventDefault();
         let formData = new FormData(event.target);
@@ -190,6 +191,9 @@ updateStatus = ($title, $status) => {
   fetch(updateStatusURL, {
     method: "POST",
     body: JSON.stringify({ title: $title, status: $status }),
+    headers: {
+      "Content-Type": "application/json",
+    },
   })
     .then((response) => response.json())
     .then((data) => {

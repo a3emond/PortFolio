@@ -40,12 +40,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
+<div class="formContainer">
 <form action="createTask.php" method="post">
-    <label>Title :</label>
+    <label>Titre :</label>
     <input id="title" name="title" placeholder="title" type="text" required>
     <label>Description :</label>
-    <input id="description" name="description" placeholder="description" type="text" required><br />
-    <button type="submit" id="createTaskBtn">Creer une Tache</button>
-    <button type="button" id="cancelBtn">Annuler</button>
+    <textarea id="description" name="description" placeholder="description" type="text" ></textarea><br />
+    <button class="formBtn" type="submit" id="createTaskBtn">Creer une Tache</button>
+    <br />
+    <button class="formBtn" type="button" id="cancelBtn">Annuler</button>
 </form>
+</div>

@@ -7,9 +7,10 @@ $userId = $_SESSION['user_id'];
 // get active user tasks
 $tasks = \a3emond\TaskQuery::create()->filterByUserId($userId)->find();
 ?>
-<button id="logoutBtn">Logout</button>
+<div id="taskContainer" class="formContainer">
+    <h2> À Faire </h2>
 <!--generate the task list from db-->
-<ul>
+<ul id="taskList">
 <?php foreach ($tasks as $task): ?>
     <?php if ($task instanceof \a3emond\Task): ?>
         <li>
@@ -28,5 +29,13 @@ $tasks = \a3emond\TaskQuery::create()->filterByUserId($userId)->find();
     <?php endif; ?>
 <?php endforeach; ?>
 </ul>
-<button id="createTaskBtn">Create New Task</button>
-<button id="deleteTaskBtn">Delete Completed Task(s)</button>
+<br />
+<button class="formBtn" id="createTaskBtn">Créer une nouvelle Tâche</button>
+<br />
+<button class="formBtn" id="deleteTaskBtn">Effacer les tâches complétées</button>
+<br />
+<button class="formBtn" id="logoutBtn">Se déconnecter</button>
+
+</div>
+<br />
+<div>Double-cliquez sur une tâche pour la modifier!</div>

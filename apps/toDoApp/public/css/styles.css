@@ -1,36 +1,60 @@
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
 .formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: fit-content;
-  width: 230px;
+  width: 100%;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(3, 248, 248);
-  background-color: rgb(22, 92, 92);
+}
+h2 {
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
 }
 input {
+  color: white;
   border: none;
   border-radius: 10px;
   padding: 4px;
-  margin-top: 4px;
-  margin-bottom: 8px;
+  background-color: black;
 }
-button {
+.formBtn {
+  width: 100%;
+
   border: none;
   border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #162e44;
-  color: #ffffff;
+  padding: 4px;
+  background-color: rgb(0, 143, 143);
+  color: white;
   cursor: pointer;
+}
+.formBtn:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 10px rgb(164, 252, 255);
+}
+#description {
+  height: 100px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 4px;
+  background-color: black;
+  resize: none;
+}
+#taskList {
+  margin-left: 20px;
+  font-size: 1rem;
+}
+#taskContainer {
+  width: 100%;
+}
+li {
+  margin-top: 10px;
 }
