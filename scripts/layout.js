@@ -25,5 +25,5 @@ document.addEventListener("click", function (event) {
 });
 // make sure sidebar doesn't close when clicked inside
 document.querySelector(".sidebar").addEventListener("click", function (event) {
-  event.stopPropagation();
+  //event.stopPropagation();
 });

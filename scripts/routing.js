@@ -116,9 +116,17 @@ function fetchContent(url) {
       contentDiv.innerHTML = data;
       if (url == "./apps/toDoApp/public/toDoAppIndex.html") {
         //load script
-        var script = document.createElement("script");
-        script.src = "./apps/toDoApp/public/toDoAppRouting.js";
-        document.body.appendChild(script);
+        //if url contains home
+        if (url.includes("home")) {
+          var script = document.createElement("script");
+          script.src = "./components/home/home.js";
+          document.body.appendChild(script);
+        }
+        if (url.includes("toDoApp")) {
+          var script = document.createElement("script");
+          script.src = "./apps/toDoApp/public/toDoAppRouting.js";
+          document.body.appendChild(script);
+        }
       }
     });
 }

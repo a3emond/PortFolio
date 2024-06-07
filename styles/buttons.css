@@ -1,3 +1,9 @@
+:root {
+  --background-color: #3f3f3f;
+  --light: #b1b1b1;
+  --dark: #1f1f1f;
+  --accent-color: #00ffff;
+}
 .button {
   padding: 10px 20px;
   width: 100%;
