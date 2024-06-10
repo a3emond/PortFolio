@@ -1,11 +1,12 @@
-//content target div
+// Content target div
 let contentDiv = document.querySelector(".content");
 let buttonTitle = document.querySelector("#buttonTitle");
-//default content
-var url = "./components/home/home.html";
-fetchContent(url);
 
-//buttons
+// Default content
+var defaultUrl = "./components/home/home.html";
+fetchContent(defaultUrl);
+
+// Buttons
 let home = document.getElementById("homeBtn");
 let tools = document.getElementById("toolsBtn");
 let gitHub = document.getElementById("gitHubBtn");
@@ -13,28 +14,34 @@ let linkedIn = document.getElementById("linkedInBtn");
 let noteTakingApp = document.getElementById("noteTakingAppBtn");
 let mail = document.getElementById("mailBtn");
 
-//click events
+// Click events
 home.addEventListener("click", () => {
-  var url = "./components/home/home.html";
-  fetchContent(url);
+  clearContent();
+
+  fetchContent("./components/home/home.html");
 });
 tools.addEventListener("click", () => {
-  var url = "./components/tools/tools.html";
-  fetchContent(url);
+  clearContent();
+
+  fetchContent("./components/tools/tools.html");
 });
 gitHub.addEventListener("click", () => {
-  var url = "https://github.com/a3emond";
-  window.open(url);
+  clearContent();
+
+  window.open("https://github.com/a3emond");
 });
 linkedIn.addEventListener("click", () => {
-  var url = "https://www.linkedin.com/in/alexandre-emond-2750492a7/";
-  window.open(url);
+  clearContent();
+
+  window.open("https://www.linkedin.com/in/alexandre-emond-2750492a7/");
 });
 noteTakingApp.addEventListener("click", () => {
-  var url = "./apps/toDoApp/public/toDoAppIndex.html";
-  fetchContent(url);
+  clearContent();
+
+  fetchContent("./apps/toDoApp/public/toDoAppIndex.html");
 });
 mail.addEventListener("click", () => {
+  clearContent();
   var url = "/components/mail/mail.php";
   fetch(url)
     .then((response) => response.text())
@@ -63,79 +70,75 @@ mail.addEventListener("click", () => {
     });
 });
 
-function fetchContent(url) {
-  fetch(url)
-    .then((response) => response.text())
-    .then((data) => {
-      contentDiv.innerHTML = data;
-    });
+// Button title
+const buttonTitles = {
+  home: "Accueil",
+  tools: "Projets",
+  gitHub: "GitHub",
+  linkedIn: "LinkedIn",
+  noteTakingApp: "Note Taking App",
+  mail: "Me Joindre!",
+};
+
+function setButtonTitle(buttonId) {
+  buttonTitle.innerHTML = buttonTitles[buttonId] || "";
 }
-//button title
-//
-//home
-home.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "Accueil";
-});
-home.addEventListener("mouseleave", () => {
-  buttonTitle.innerHTML = "";
-});
-//tools
-tools.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "Projets";
-});
-tools.addEventListener("mouseleave", () => {
-  buttonTitle.innerHTML = "";
-});
-//gitHub
-gitHub.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "GitHub";
-});
-gitHub.addEventListener("mouseleave", () => {
-  buttonTitle.innerHTML = "";
-});
-//linkedIn
-linkedIn.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "LinkedIn";
-});
-linkedIn.addEventListener("mouseleave", () => {
-  buttonTitle.innerHTML = "";
-});
-//noteTakingApp
-noteTakingApp.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "Note Taking App";
-});
-noteTakingApp.addEventListener("mouseleave", () => {
-  buttonTitle.innerHTML = "";
-});
-//mail
-mail.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "Me Joindre!";
-});
-mail.addEventListener("mouseleave", () => {
-  buttonTitle.innerHTML = "";
+
+// Mouse enter and leave events for buttons
+const buttonIds = [
+  "home",
+  "tools",
+  "gitHub",
+  "linkedIn",
+  "noteTakingApp",
+  "mail",
+];
+buttonIds.forEach((buttonId) => {
+  const button = document.getElementById(`${buttonId}Btn`);
+  button.addEventListener("mouseenter", () => {
+    setButtonTitle(buttonId);
+  });
+  button.addEventListener("mouseleave", () => {
+    setButtonTitle("");
+  });
 });
 
-// generic fetch function
+// Fetch content function
 function fetchContent(url) {
   fetch(url)
     .then((response) => response.text())
     .then((data) => {
       contentDiv.innerHTML = data;
-      //load scripts
       if (url.includes("home.html")) {
-        var script = document.createElement("script");
-        script.src = "components/home/home.js";
-        document.body.appendChild(script);
+        loadScript("components/home/home.js");
       }
       if (url.includes("tools.html")) {
-        var script = document.createElement("script");
-        script.src = "components/tools/tools.js";
-        document.body.appendChild(script);
+        loadScript("components/tools/tools.js");
       }
       if (url.includes("toDoApp")) {
-        var script = document.createElement("script");
-        script.src = "./apps/toDoApp/public/toDoAppRouting.js";
-        document.body.appendChild(script);
+        loadScript("./apps/toDoApp/public/toDoAppRouting.js");
       }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
     });
+}
+
+// Clear content function
+function clearContent() {
+  contentDiv.innerHTML = "";
+  // find all elements with card class and remove them if they exist
+  let cards = document.querySelectorAll(".card");
+  if (cards) {
+    cards.forEach((card) => {
+      card.remove();
+    });
+  }
+}
+
+// Load script function
+function loadScript(src) {
+  var script = document.createElement("script");
+  script.src = src;
+  document.body.appendChild(script);
 }

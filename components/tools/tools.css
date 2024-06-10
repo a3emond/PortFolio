@@ -2,18 +2,26 @@
   position: relative;
 }
 .card {
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-evenly;
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(3, 248, 248);
-
   /* Glass effect */
   background: linear-gradient(
     -30deg,
-    rgba(135, 206, 235, 0.3),
-    rgba(255, 255, 255, 0.4),
-    rgba(135, 206, 235, 0.3)
+    rgba(135, 206, 235, 0.6),
+    rgba(255, 255, 255, 0.7),
+    rgba(135, 206, 235, 0.6)
   );
+  color: black;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3); /* White border */
+  overflow: hidden;
+}
+.icon {
+  width: 5%;
 }
 .scrollIcon {
   position: absolute;
@@ -36,4 +44,12 @@
   100% {
     transform: translateY(0);
   }
+}
+.projectImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.project-image {
 }
