@@ -20,7 +20,6 @@ home.addEventListener("click", () => {
 });
 tools.addEventListener("click", () => {
   var url = "./components/tools/tools.html";
-
   fetchContent(url);
 });
 gitHub.addEventListener("click", () => {
@@ -64,6 +63,13 @@ mail.addEventListener("click", () => {
     });
 });
 
+function fetchContent(url) {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      contentDiv.innerHTML = data;
+    });
+}
 //button title
 //
 //home
@@ -75,7 +81,7 @@ home.addEventListener("mouseleave", () => {
 });
 //tools
 tools.addEventListener("mouseenter", () => {
-  buttonTitle.innerHTML = "Outils";
+  buttonTitle.innerHTML = "Projets";
 });
 tools.addEventListener("mouseleave", () => {
   buttonTitle.innerHTML = "";

@@ -5,7 +5,15 @@ for (let i = 1; i <= 14; i++) {
   let div = document.createElement("div");
   div.style.position = "absolute";
   div.style.transition = "all 0.5s ease";
-
+  //if landscape flex-direction: row if portrait flex-direction: column
+  div.style.display = "flex";
+  div.style.justifyContent = "center";
+  div.style.alignItems = "center";
+  if (window.innerWidth > window.innerHeight) {
+    div.style.flexDirection = "row";
+  } else {
+    div.style.flexDirection = "column";
+  }
   div.classList.add(`pos${i}`);
   div.classList.add("card");
   mainContainer.appendChild(div);
@@ -17,6 +25,7 @@ pos1.style.height = mainContainer.clientHeight / 2 + "px";
 pos1.style.top = "25%";
 pos1.style.left = findCenter(pos1);
 pos1.style.zIndex = "10";
+pos1.innerHTML = "1";
 //pos2
 var pos2 = document.querySelector(".pos2");
 pos2.style.width = pos1.clientWidth / 1.5 + "px";
@@ -25,6 +34,7 @@ pos2.style.bottom = "10%";
 pos2.style.left = findCenter(pos2);
 pos2.style.filter = "blur(2px)";
 pos2.style.zIndex = "9";
+pos2.innerHTML = "2";
 //pos3
 var pos3 = document.querySelector(".pos3");
 pos3.style.width = pos2.clientWidth / 1.5 + "px";
@@ -33,6 +43,7 @@ pos3.style.bottom = "5%";
 pos3.style.left = findCenter(pos3);
 pos3.style.filter = "blur(2px)";
 pos3.style.zIndex = "8";
+pos3.innerHTML = "3";
 //pos4
 var pos4 = document.querySelector(".pos4");
 pos4.style.width = pos3.clientWidth / 1.5 + "px";
@@ -41,6 +52,7 @@ pos4.style.bottom = "3%";
 pos4.style.left = findCenter(pos4);
 pos4.style.filter = "blur(3px)";
 pos4.style.zIndex = "7";
+pos4.innerHTML = "4";
 //pos5
 var pos5 = document.querySelector(".pos5");
 pos5.style.width = pos4.clientWidth / 1.5 + "px";
@@ -49,6 +61,7 @@ pos5.style.bottom = "17%";
 pos5.style.left = findCenter(pos5);
 pos5.style.filter = "blur(3px)";
 pos5.style.zIndex = "6";
+pos5.innerHTML = "5";
 //pos6
 var pos6 = document.querySelector(".pos6");
 pos6.style.width = pos5.clientWidth / 1.5 + "px";
@@ -57,6 +70,7 @@ pos6.style.bottom = "28%";
 pos6.style.left = findCenter(pos6);
 pos6.style.filter = "blur(3px)";
 pos6.style.zIndex = "5";
+pos6.innerHTML = "6";
 //pos7
 var pos7 = document.querySelector(".pos7");
 pos7.style.width = pos6.clientWidth / 1.5 + "px";
@@ -65,6 +79,7 @@ pos7.style.bottom = "38%";
 pos7.style.left = findCenter(pos7);
 pos7.style.filter = "blur(3px)";
 pos7.style.zIndex = "4";
+pos7.innerHTML = "7";
 //pos8
 var pos8 = document.querySelector(".pos8");
 pos8.style.width = pos7.clientWidth / 1.5 + "px";
@@ -72,6 +87,8 @@ pos8.style.height = pos7.clientHeight / 1.5 + "px";
 pos8.style.top = 48 + "%";
 pos8.style.left = findCenter(pos8);
 pos8.style.filter = "blur(3px)";
+pos8.style.zIndex = "3";
+pos8.innerHTML = "8";
 //pos9
 var pos9 = document.querySelector(".pos9");
 pos9.style.width = pos6.clientWidth / 1.5 + "px";
@@ -80,6 +97,7 @@ pos9.style.top = "38%";
 pos9.style.left = findCenter(pos7);
 pos9.style.filter = "blur(3px)";
 pos9.style.zIndex = "4";
+pos9.innerHTML = "9";
 //pos10
 var pos10 = document.querySelector(".pos10");
 pos10.style.width = pos5.clientWidth / 1.5 + "px";
@@ -88,6 +106,7 @@ pos10.style.top = "28%";
 pos10.style.left = findCenter(pos6);
 pos10.style.filter = "blur(3px)";
 pos10.style.zIndex = "5";
+pos10.innerHTML = "10";
 //pos11
 var pos11 = document.querySelector(".pos11");
 pos11.style.width = pos4.clientWidth / 1.5 + "px";
@@ -96,6 +115,7 @@ pos11.style.top = "17%";
 pos11.style.left = findCenter(pos11);
 pos11.style.filter = "blur(3px)";
 pos11.style.zIndex = "6";
+pos11.innerHTML = "11";
 //pos12
 var pos12 = document.querySelector(".pos12");
 pos12.style.width = pos3.clientWidth / 1.5 + "px";
@@ -104,6 +124,7 @@ pos12.style.top = "3%";
 pos12.style.left = findCenter(pos12);
 pos12.style.filter = "blur(3px)";
 pos12.style.zIndex = "7";
+pos12.innerHTML = "12";
 //pos13
 var pos13 = document.querySelector(".pos13");
 pos13.style.width = pos2.clientWidth / 1.5 + "px";
@@ -112,6 +133,7 @@ pos13.style.top = "5%";
 pos13.style.left = findCenter(pos13);
 pos13.style.filter = "blur(2px)";
 pos13.style.zIndex = "8";
+pos13.innerHTML = "13";
 //pos14
 var pos14 = document.querySelector(".pos14");
 pos14.style.width = pos1.clientWidth / 1.5 + "px";
@@ -120,10 +142,10 @@ pos14.style.top = "10%";
 pos14.style.left = findCenter(pos14);
 pos14.style.filter = "blur(2px)";
 pos14.style.zIndex = "9";
+pos14.innerHTML = "14";
 
 function findCenter(pos) {
   var center = (mainContainer.clientWidth - pos.clientWidth) / 2 + "px";
-
   return center;
 }
 

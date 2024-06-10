@@ -15,3 +15,25 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3); /* White border */
 }
+.scrollIcon {
+  position: absolute;
+  font-size: 50px;
+  bottom: calc(50% - 15px);
+  right: 5%;
+  margin: 10px;
+  z-index: 100;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+  animation: scroll 1s infinite ease-in-out;
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
