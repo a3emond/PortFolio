@@ -20,6 +20,7 @@ home.addEventListener("click", () => {
 });
 tools.addEventListener("click", () => {
   var url = "./components/tools/tools.html";
+
   fetchContent(url);
 });
 gitHub.addEventListener("click", () => {
@@ -114,12 +115,17 @@ function fetchContent(url) {
     .then((response) => response.text())
     .then((data) => {
       contentDiv.innerHTML = data;
+      //load scripts
       if (url.includes("home.html")) {
         var script = document.createElement("script");
         script.src = "components/home/home.js";
         document.body.appendChild(script);
       }
-
+      if (url.includes("tools.html")) {
+        var script = document.createElement("script");
+        script.src = "components/tools/tools.js";
+        document.body.appendChild(script);
+      }
       if (url.includes("toDoApp")) {
         var script = document.createElement("script");
         script.src = "./apps/toDoApp/public/toDoAppRouting.js";

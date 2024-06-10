@@ -3,22 +3,20 @@ var mainContainer = document.querySelector(".mainContainer");
 // create 14 divs with class pos1, pos2, pos3, ... pos14
 for (let i = 1; i <= 14; i++) {
   let div = document.createElement("div");
-  div.style.border = "1px solid red";
   div.style.position = "absolute";
-  div.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
   div.style.transition = "all 0.5s ease";
 
   div.classList.add(`pos${i}`);
+  div.classList.add("card");
   mainContainer.appendChild(div);
 }
 //pos1
 var pos1 = document.querySelector(".pos1");
-pos1.style.width = mainContainer.clientWidth + "px";
+pos1.style.width = mainContainer.clientWidth * 0.8 + "px";
 pos1.style.height = mainContainer.clientHeight / 2 + "px";
 pos1.style.top = "25%";
-pos1.style.left = "0";
+pos1.style.left = findCenter(pos1);
 pos1.style.zIndex = "10";
-pos1.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
 //pos2
 var pos2 = document.querySelector(".pos2");
 pos2.style.width = pos1.clientWidth / 1.5 + "px";
@@ -130,7 +128,7 @@ function findCenter(pos) {
 }
 
 // Store the initial positions in an array
-let positions = Array.from({ length: 14 }, (_, i) => {
+var positions = Array.from({ length: 14 }, (_, i) => {
   let pos = document.querySelector(`.pos${i + 1}`);
   return {
     width: pos.style.width,
@@ -144,7 +142,7 @@ let positions = Array.from({ length: 14 }, (_, i) => {
   };
 });
 
-let isAnimating = false;
+var isAnimating = false;
 
 // Listen to wheel event
 window.addEventListener("wheel", (event) => {
@@ -156,13 +154,13 @@ window.addEventListener("wheel", (event) => {
 });
 
 // Listen to touch events
-let touchStartY;
+var touchStartY;
 window.addEventListener("touchstart", (event) => {
   touchStartY = event.touches[0].clientY;
 });
 
 window.addEventListener("touchmove", (event) => {
-  let touchMoveY = event.touches[0].clientY;
+  var touchMoveY = event.touches[0].clientY;
 
   if (touchStartY - touchMoveY > 30) {
     animateDown();

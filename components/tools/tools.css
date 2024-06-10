@@ -1,12 +1,17 @@
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-}
 .mainContainer {
   position: relative;
-  width: 50%;
-  height: 100%;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(3, 248, 248);
+
+  /* Glass effect */
+  background: linear-gradient(
+    -30deg,
+    rgba(135, 206, 235, 0.3),
+    rgba(255, 255, 255, 0.4),
+    rgba(135, 206, 235, 0.3)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* White border */
 }
